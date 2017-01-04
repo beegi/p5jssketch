@@ -14,7 +14,7 @@ function setup() {
 
 function draw() {
   if (start < width+radius) {
-  var p = start + radius*cos(winkel);
+  var p = start + radius*cos(winkel+random(0.157));
   var q = height/2 - radius*sin(winkel+random(0.157)); 
    push();
   smooth();
