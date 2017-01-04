@@ -9,18 +9,16 @@ function setup() {
   background(245);
   winkel = PI;
   radius = 90;
-  start=-60; 
+  start = -60; 
   }
 
 function draw() {
   if (start < width+radius) {
   var p = start + radius*cos(winkel+random(0.157));
   var q = height/2 - radius*sin(winkel+random(0.157)); 
-   push();
-  smooth();
+  push();
   laenge = random(90);
   stroke(0, 85, 100, 120);
-  // stroke(226, 72, 68, 100);
   strokeWeight(0.5);
   translate(p, q);
   rotate(angle);
@@ -30,5 +28,4 @@ function draw() {
   winkel -= 0.0125;
   start += 0.314;
   } 
-  //save('output.png');
-        } 
+      } 
