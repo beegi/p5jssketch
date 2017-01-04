@@ -6,7 +6,7 @@ var angleSpeed = 0.157;
 
 function setup() {
   createCanvas(600, 600);
-  background(252);
+  background(245);
   winkel = PI;
   radius = 90;
   start=-60; 
