@@ -3,57 +3,39 @@ var radius = 60;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  // createCanvas(600, 600);
+  // saveFrames('bild-', 'png', 4, 25);
 }
 
 function draw() {
   background(250);
-  stroke(112, 70, 140);
-  strokeWeight(2);
-
-
-  var h = radius * sin(PI / 3);
+  stroke(51);
+  strokeWeight(1.2);
+  var hoehe = radius * sin(PI / 3);
   var d = radius + radius * sin(PI / 6);
   var l = width / radius;
-  for (var j = 0; j < l; j++) {
-    for (var i = 0; i < l; i++) {
-      push();
-      translate(h + 4 * i * h, d * (2 * j + 1));
-      rotate(winkel);
-      speichen(0, 0);
-      pop();
-    }
-  }
-
-  for (var n = 0; n < l; n++) {
-    for (var k = 1; k < l; k++) {
-      push();
-      translate(h + (4 * k - 2) * h, d * (2 * n + 1));
-      rotate(-winkel);
-      speichen(0, 0);
-      pop();
-    }
-  }
-
 
   for (var q = 0; q < l; q++) {
     for (var p = 0; p < l; p++) {
       push();
-      translate(4 * p * h, 2 * q * d);
-      rotate(winkel);
-      speichen(0, 0);
-      pop();
-    }
-  }
-
-  for (var m = 0; m < l; m++) {
-    for (var o = 1; o < l; o++) {
-      push();
-      translate((4 * o - 2) * h, 2 * m * d);
+      translate(2 * radius * p, 4 * hoehe * q);
       rotate(-winkel);
       speichen(0, 0);
       pop();
     }
   }
+
+  for (var q = 0; q < l; q++) {
+    for (var p = 0; p < l; p++) {
+      push();
+      translate(radius, 2* hoehe);
+      translate(2 * radius * p, 4 * hoehe * q);
+      rotate(-winkel);
+      speichen(0, 0);
+      pop();
+    }
+  }
+
 
   if (winkel < PI / 6) {
     var easing = 0.05;
@@ -70,7 +52,7 @@ function draw() {
 }
 
 function speichen(x, y) {
-  var r = radius;
+  var r = radius*1.15;
   line(x - r, y, x + r, y);
   var x1 = x - r * cos(PI / 3);
   var y1 = y + r * sin(PI / 3);
